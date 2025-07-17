@@ -1,6 +1,12 @@
 import React, { Suspense } from 'react'
 import { IProduct } from '@/types';
 import ProductsCard, { LoadingProducts } from '@/components/ProductCard';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: "Products",
+    description: "Products, Home, Phone, Mobile, Computer, Food, Kitchen, Sport, Accessories",
+};
 
 const Products = async () => {
     const response = await fetch("https://dummyjson.com/products?limit=20&skip=40", { next: { revalidate: 60 } });

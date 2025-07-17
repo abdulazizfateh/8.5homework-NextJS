@@ -1,6 +1,12 @@
 import React, { Suspense } from 'react'
 import { IPost } from '@/types';
 import PostCard, { LoadingPosts } from '@/components/PostCard';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: "Posts",
+    description: "Post, User, Article",
+};
 
 const Posts = async () => {
     const response = await fetch("https://dummyjson.com/posts?limit=20", { next: { revalidate: 60 } });

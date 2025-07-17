@@ -1,6 +1,12 @@
 import React, { cache, Suspense } from 'react'
 import { IRecipe } from '@/types';
 import RecipeCard, { LoadingRecipes } from '@/components/RecipeCard';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: "Recipes",
+    description: "Meal, Preparation, Cuisine, Pizza, Burger, Fast Food",
+};
 
 const Recipes = async () => {
     const respone = await fetch("https://dummyjson.com/recipes?limit=20", { next: { revalidate: 60 } });

@@ -1,6 +1,12 @@
 import React, { Suspense } from 'react'
 import { IComment } from '@/types';
 import CommentCard, { LoadingComments } from '@/components/CommentCard';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: "Comments",
+    description: "Comment, Opinion, Reddit, People",
+};
 
 const Comments = async () => {
     const response = await fetch("https://dummyjson.com/comments?limit=30", { next: { revalidate: 60 } });
