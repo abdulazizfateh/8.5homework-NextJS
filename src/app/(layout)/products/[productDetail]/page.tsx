@@ -2,7 +2,7 @@ import ProductDetailCard from '@/components/ProductDetailCard';
 import { IProduct } from '@/types';
 import React from 'react'
 
-const ProductDetail = async ({ params }: { params: { productDetail: string } }) => {
+const ProductDetail = async ({ params }: { params: { productDetail: number } }) => {
     const id = params.productDetail;
     const response = await fetch(`https://dummyjson.com/products/${id}`);
     const data: IProduct = await response.json();

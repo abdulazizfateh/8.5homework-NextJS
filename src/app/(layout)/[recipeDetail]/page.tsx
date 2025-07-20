@@ -2,7 +2,7 @@ import React from 'react'
 import { IRecipe } from '@/types/index';
 import RecipeDetailCard from '@/components/RecipeDetailCard';
 
-const RecipeDetail = async ({ params }: { params: { recipeDetail: string } }) => {
+const RecipeDetail = async ({ params }: { params: { recipeDetail: number } }) => {
     const id = params.recipeDetail;
     const response = await fetch(`https://dummyjson.com/recipes/${id}`);
     const recipeData: IRecipe = await response.json();
