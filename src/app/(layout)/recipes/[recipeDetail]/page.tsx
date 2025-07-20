@@ -2,9 +2,9 @@ import React from 'react'
 import { IRecipe } from '@/types/index';
 import RecipeDetailCard from '@/components/RecipeDetailCard';
 
-const RecipeDetail = async ({ params }: { params: { recipeDetail: string } }) => {
-    const id = params.recipeDetail;
-    const response = await fetch(`https://dummyjson.com/recipes/${id}`);
+const RecipesDetail = async ({ params }: { params: Promise<{ recipeDetail: string }> }) => {
+    const { recipeDetail } = await params;
+    const response = await fetch(`https://dummyjson.com/recipes/${recipeDetail}`);
     const recipeData: IRecipe = await response.json();
 
     return (
@@ -16,4 +16,4 @@ const RecipeDetail = async ({ params }: { params: { recipeDetail: string } }) =>
     )
 }
 
-export default React.memo(RecipeDetail);
+export default React.memo(RecipesDetail);
