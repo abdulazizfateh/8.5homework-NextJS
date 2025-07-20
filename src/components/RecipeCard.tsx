@@ -39,7 +39,7 @@ const RecipeCard = ({ recipesData }: { recipesData: IRecipe[] }) => {
                 recipesData?.map(item => (
                     <div key={item.id} className='border border-gray-100 rounded-lg overflow-hidden'>
                         <div className='bg-gray-50 overflow-hidden'>
-                            <Link href={`/${item.id}`}>
+                            <Link href={`recipes/${item.id}`}>
                                 <Image loading='lazy' className='w-full h-40 md:h-[265px] object-cover object-center cursor-pointer hover:scale-[1.01] duration-200 ease-out' src={item.image} alt={item.name} width={400} height={246} />
                             </Link>
                         </div>

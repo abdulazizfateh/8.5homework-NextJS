@@ -9,9 +9,9 @@ import { CiMenuBurger } from "react-icons/ci";
 const Header = () => {
     const pathname = usePathname();
     const links = [
-        { href: "/", name: "Recipes" },
+        { href: "/", name: "Quotes" },
         { href: "/products", name: "Products" },
-        { href: "/quotes", name: "Quotes" },
+        { href: "/recipes", name: "Recipes" },
         { href: "/comments", name: "Comments" },
         { href: "/posts", name: "Posts" }
     ]
