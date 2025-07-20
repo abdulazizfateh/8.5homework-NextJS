@@ -3,7 +3,7 @@ import { IProduct } from '@/types';
 import React from 'react'
 
 const ProductDetail = async ({ params }: { params: { productDetail: string } }) => {
-    const id = Number(params.productDetail);
+    const id = await params.productDetail;
     const response = await fetch(`https://dummyjson.com/products/${id}`);
     const data: IProduct = await response.json();
 
