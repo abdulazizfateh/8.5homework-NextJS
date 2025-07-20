@@ -7,7 +7,17 @@ export interface IQuote {
 export interface IProduct {
     id: number,
     title: string,
+    description: string,
+    rating: number,
+    stock: number,
+    brand: string,
+    warrantyInformation: string,
+    shippingInformation: string,
+    availabilityStatus: string,
     thumbnail: string,
+    images: string[],
+    returnPolicy: string,
+    minimumOrderQuantity: number
     price: number
 }
 
@@ -30,7 +40,18 @@ export interface IPost {
 
 export interface IRecipe {
     id: number,
-    servings: number,
+    caloriesPerServing: number,
+    cookTimeMinutes: number,
+    cuisine: string,
+    difficulty: string,
+    image: string,
+    ingredients: string[],
+    instructions: string[],
+    mealType: string[],
     name: string,
-    image: string
+    prepTimeMinutes: number,
+    rating: number,
+    reviewCount: number,
+    servings: number,
+    tags: string[],
 }

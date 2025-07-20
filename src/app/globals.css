@@ -1,11 +1,15 @@
 @import "tailwindcss";
 
+body{
+    font-family: var(--font-geist);
+}
+
 .container {
     max-width: 1440px;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding: 0 8px;
+    padding: 0 12px;
 }
 
 @media (min-width: 640px) {

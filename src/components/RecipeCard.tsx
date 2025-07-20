@@ -1,6 +1,7 @@
 import React from 'react'
 import { IRecipe } from '@/types';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export const LoadingRecipes = ({ cardPerPage }: { cardPerPage: number }) => {
     const loadingArray: string[] = Array(cardPerPage).fill("");
@@ -37,14 +38,16 @@ const RecipeCard = ({ recipesData }: { recipesData: IRecipe[] }) => {
             {
                 recipesData?.map(item => (
                     <div key={item.id} className='border border-gray-100 rounded-lg overflow-hidden'>
-                        <div className=' bg-gray-50 overflow-hidden'>
-                            <Image loading='lazy' className='w-full h-40 md:h-[265px] object-cover object-center cursor-pointer hover:scale-[1.01] duration-200 ease-out' src={item.image} alt={item.name} width={400} height={246} />
+                        <div className='bg-gray-50 overflow-hidden'>
+                            <Link href={`/${item.id}`}>
+                                <Image loading='lazy' className='w-full h-40 md:h-[265px] object-cover object-center cursor-pointer hover:scale-[1.01] duration-200 ease-out' src={item.image} alt={item.name} width={400} height={246} />
+                            </Link>
                         </div>
                         <div className='p-2.5 flex flex-col gap-1'>
+                            <p className='text-xs sm:text-sm'>{item.name}</p>
                             <div className='flex items-center justify-between'>
                                 <p className='text-xs sm:text-sm font-medium'><span className='text-gray-600 font-normal'>Servings: </span>{item.servings}</p>
                             </div>
-                            <p className='text-xs sm:text-sm'>{item.name}</p>
                         </div>
                     </div>
                 ))

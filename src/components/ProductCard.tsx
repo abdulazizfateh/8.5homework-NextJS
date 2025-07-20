@@ -1,6 +1,7 @@
 import React from 'react'
 import { IProduct } from '@/types';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export const LoadingProducts = ({ cardPerPage }: { cardPerPage: number }) => {
     const loadingArray: string[] = Array(cardPerPage).fill("");
@@ -38,7 +39,9 @@ const ProductCard = ({ productsData }: { productsData: IProduct[] }) => {
                 productsData?.map(item => (
                     <div key={item.id} className='border border-gray-100 rounded-lg'>
                         <div className='bg-gray-50'>
-                            <Image loading='lazy' src={item.thumbnail} alt={item.title} width={400} height={246} className='w-full h-40 md:h-[246px] object-contain cursor-pointer hover:scale-[1.03] duration-200 ease-out' />
+                            <Link href={`products/${item.id}`}>
+                                <Image loading='lazy' src={item.thumbnail} alt={item.title} width={400} height={246} className='w-full h-40 md:h-[246px] object-contain cursor-pointer hover:scale-[1.03] duration-200 ease-out' />
+                            </Link>
                         </div>
                         <div className='p-2.5 flex flex-col gap-1'>
                             <div className='flex items-center justify-between'>
